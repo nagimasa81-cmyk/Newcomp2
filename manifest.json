@@ -1,0 +1,11 @@
+{
+  "app_name": "InSightec Complaint Service Hub",
+  "version": "0.5 Alpha",
+  "build_date": "2026-07-09",
+  "description": "Commit 0001: Theme engine and Hub UI refresh. InSightec blue launcher, left navigation, header language/output controls, status bar, and role-based cards.",
+  "commit": "0002u1",
+  "program_version": "0.5.0002u1",
+  "update_model": "master/program",
+  "entry_point": "launcher.py",
+  "note": "Fix PyInstaller Tkinter ttk/scrolledtext bundling for launcher build."
+}

@@ -1,0 +1,9 @@
+{
+  "product": "InSightec Complaint Service Hub",
+  "version": "0.5 Alpha",
+  "commit": "0002u1",
+  "program_version": "0.5.0002u1",
+  "update_model": "master/program separated",
+  "date": "2026-07-09",
+  "note": "Fix PyInstaller Tkinter ttk/scrolledtext bundling for launcher build."
+}

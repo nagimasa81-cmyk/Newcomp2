@@ -1,0 +1,15 @@
+Update Model
+============
+
+Master Update ZIP
+- update_manifest.json with update_type = master
+- Updates config/, masters/, templates/, profiles/, resources/
+- Applied while Hub is running, backup is created.
+
+Program Update ZIP
+- update_manifest.json with update_type = program
+- Updates hub_app.py, launcher.py, main.py, modules/, resources/, app_version.json
+- Hub stages the ZIP and applies it safely on next Launcher restart.
+
+For normal users, use Master Update.
+For UI fixes, program bugs, module updates, use Program Update.
