@@ -1,0 +1,112 @@
+name: 01_BUILD_EXE_PYINSTALLER
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Command
+        shell: cmd
+        run: |
+          setlocal
+      - name: Command
+        shell: cmd
+        run: |
+          cd /d %~dp0
+      - name: Command
+        shell: cmd
+        run: |
+          python -m pip install --upgrade pyinstaller
+      - name: Command
+        shell: cmd
+        run: |
+          pyinstaller --noconfirm --onedir --windowed --name Complaint_Service_Hub_Launcher ^
+      - name: Command
+        shell: cmd
+        run: |
+          --hidden-import=tkinter ^
+      - name: Command
+        shell: cmd
+        run: |
+          --hidden-import=tkinter.ttk ^
+      - name: Command
+        shell: cmd
+        run: |
+          --hidden-import=tkinter.filedialog ^
+      - name: Command
+        shell: cmd
+        run: |
+          --hidden-import=tkinter.messagebox ^
+      - name: Command
+        shell: cmd
+        run: |
+          --hidden-import=tkinter.scrolledtext ^
+      - name: Command
+        shell: cmd
+        run: |
+          launcher.py
+      - name: Command
+        shell: cmd
+        run: |
+          xcopy /E /I /Y config dist\Complaint_Service_Hub_Launcher\config
+      - name: Command
+        shell: cmd
+        run: |
+          xcopy /E /I /Y masters dist\Complaint_Service_Hub_Launcher\masters
+      - name: Command
+        shell: cmd
+        run: |
+          xcopy /E /I /Y templates dist\Complaint_Service_Hub_Launcher\templates
+      - name: Command
+        shell: cmd
+        run: |
+          xcopy /E /I /Y profiles dist\Complaint_Service_Hub_Launcher\profiles
+      - name: Command
+        shell: cmd
+        run: |
+          if exist resources xcopy /E /I /Y resources dist\Complaint_Service_Hub_Launcher\resources
+      - name: Command
+        shell: cmd
+        run: |
+          copy /Y hub_app.py dist\Complaint_Service_Hub_Launcher\hub_app.py
+      - name: Command
+        shell: cmd
+        run: |
+          copy /Y launcher.py dist\Complaint_Service_Hub_Launcher\launcher.py
+      - name: Command
+        shell: cmd
+        run: |
+          copy /Y main.py dist\Complaint_Service_Hub_Launcher\main.py
+      - name: Command
+        shell: cmd
+        run: |
+          copy /Y manifest.json dist\Complaint_Service_Hub_Launcher\manifest.json
+      - name: Command
+        shell: cmd
+        run: |
+          copy /Y app_version.json dist\Complaint_Service_Hub_Launcher\app_version.json
+      - name: Command
+        shell: cmd
+        run: |
+          mkdir dist\Complaint_Service_Hub_Launcher\logs 2>nul
+      - name: Command
+        shell: cmd
+        run: |
+          mkdir dist\Complaint_Service_Hub_Launcher\records 2>nul
+      - name: Command
+        shell: cmd
+        run: |
+          mkdir dist\Complaint_Service_Hub_Launcher\updates 2>nul
+      - name: Command
+        shell: cmd
+        run: |
+          mkdir dist\Complaint_Service_Hub_Launcher\backups 2>nul
+      - name: Command
+        shell: cmd
+        run: |
+          echo Build completed.
